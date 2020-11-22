@@ -43,4 +43,8 @@ export class SecondaryObjective extends Objective {
     super(id, name, description, ObjectiveType.SECONDARY)
     this.scoringType = scoringType
   }
+
+  validatePoints (points: number): boolean {
+    return points <= 0
+  }
 }
