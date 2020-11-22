@@ -25,6 +25,10 @@ export class PrimaryObjective extends Objective {
 
     if (maxPoints) { this.maxPoints = maxPoints }
   }
+
+  validatePoints (points: number): boolean {
+    return points <= this.maxPoints
+  }
 }
 
 export enum ScoringType {
