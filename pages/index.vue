@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-md">
     <div>
       <Logo />
       <h1 class="title">
@@ -23,14 +23,20 @@
           GitHub
         </a>
       </div>
+      <ScoringSheet class="mt-3" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import ScoringSheet from '~/components/match/ScoringSheet.vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  components: {
+    ScoringSheet
+  }
+})
 </script>
 
 <style>
