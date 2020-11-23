@@ -1,4 +1,4 @@
-class Objective {
+export class Objective {
   id: number
   name: string
   description: string
@@ -38,13 +38,18 @@ export enum ScoringType {
 
 export class SecondaryObjective extends Objective {
   public scoringType: ScoringType
+  public maxPoints: number = 15
 
-  constructor (id: number, name: string, description: string, scoringType: ScoringType) {
+  constructor (id: number, name: string, description: string, scoringType: ScoringType, maxPoints?: number) {
     super(id, name, description, ObjectiveType.SECONDARY)
     this.scoringType = scoringType
+
+    if (maxPoints) {
+      this.maxPoints = maxPoints
+    }
   }
 
   validatePoints (points: number): boolean {
-    return points <= 0
+    return points <= this.maxPoints
   }
 }
